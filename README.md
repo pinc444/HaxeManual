@@ -132,6 +132,29 @@ Definitions can be referenced from other parts of the manual. Their label is bas
 
 The [metadata](https://haxe.org/manual/cr-metadata.html) and [define](https://haxe.org/manual/compiler-usage-flags.html) tables are generated automatically from [JSON definitions](https://github.com/HaxeFoundation/haxe/tree/development/src-json). To update the generated files from the current `development` branch, simply run `haxe generate.hxml` in the `generate` directory (requires `curl` to be installed and in `PATH`).
 
+## Building with mdBook
+
+The Haxe Manual can be built and served using [mdBook](https://rust-lang.github.io/mdBook/), a modern documentation tool.
+
+### Installation
+
+```bash
+# Install mdBook (requires Rust/Cargo)
+cargo install mdbook
+```
+
+### Usage
+
+```bash
+# Build the book (output will be in the book/ directory)
+mdbook build
+
+# Serve locally with auto-reload (default: http://localhost:3000)
+mdbook serve
+```
+
+The mdBook configuration is in `book.toml`, and the table of contents is in `content/SUMMARY.md`.
+
 ## Manual preview
 
 When working on the manual, any Markdown preview (including GitHub renderer) should suffice to show if the text looks correct. To make sure the special Haxe Manual-specific syntax works as expected, please use a local instance of [haxe.org](https://github.com/HaxeFoundation/haxe.org). The workflow consists of:
